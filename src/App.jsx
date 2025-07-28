@@ -1,11 +1,10 @@
 import{BrowserRouter as Router, Routes, Route} from "react-router-dom"
-import ContactPages from "./pages/contactPage"
 import Home from "./pages/home"
 import ServicePage from "./pages/servicePage"
 import ContactPage from "./pages/contactPage"
 import AboutPage from "./pages/aboutPage"
 import LoginPage from "./pages/loginPage"
-import RegisterPage from "./pages/RegisterPage"
+import RegisterPage from "./pages/registerPage"
 
 function App() {
   return (
