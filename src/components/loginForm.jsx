@@ -10,9 +10,10 @@ const LoginForm = () =>{
       e.preventDefault();
       try {
         const response = await axios.post("https://backend-poratlturismo-cm8i.onrender.com/api/auth/login", {
-            email,
+        name: nome,    
+        email,
             password: senha
-        })
+        });
         const userData = response.data;
         localStorage.setItem("user", JSON.stringify(userData))
         alert("usuario logado com sucesso!!")
