@@ -5,15 +5,14 @@ const LoginForm = () =>{
     const [email ,setEmail] = useState('')
     const [senha, setSenha] = useState('')
     const navigate = useNavigate();
-
+ 
     const handleSubmit = async (e) => {
       e.preventDefault();
       try {
-        const response = await axios.post("https://backend-poratlturismo-cm8i.onrender.com/api/auth/login/users", {
-        name: nome,    
-        email,
+        const response = await axios.post("https://backend-poratlturismo-cm8i.onrender.com/api/auth/login", {
+            email,
             password: senha
-        });
+        })
         const userData = response.data;
         localStorage.setItem("user", JSON.stringify(userData))
         alert("usuario logado com sucesso!!")
@@ -24,7 +23,7 @@ const LoginForm = () =>{
         }else{
           alert("erro ao conectar ao servidor")
         }
-        
+       
       }
     };
     return(
@@ -41,7 +40,7 @@ const LoginForm = () =>{
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                     required
-                    className="w-full border border-gray-300 p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500 text-sm sm:text-base"
+                    className="w-full border border-gray-300 p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm sm:text-base"
                     placeholder="Digite seu email"/>
                 </div>
                 <div>
@@ -53,21 +52,23 @@ const LoginForm = () =>{
                     value={senha}
                     onChange={(e) => setSenha(e.target.value)}
                     required
-                    className="w-full border border-gray-300 p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500 text-sm sm:text-base"
+                    className="w-full border border-gray-300 p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm sm:text-base"
                     placeholder="Digite sua senha" />
                 </div>
-                <button type="submit" className="bg-green-500 hover:bg-green-600 text-white px-6 py-2
+                <button type="submit" className="bg-blue-500 hover:bg-blue-600 text-white px-6 py-2
                 rounded-lg transition duration-300 w-full sm:w-full mt-2">
                     Entrar
                 </button>
                  
               </form>
               <p className="mt-6 text-center text-sm text-gray-600">não tem conta?
-              <a href="/register" className="text-green-600 hover:underline text-center p-2">Cadastre-se</a>
-              </p> 
+              <a href="/register" className="text-blue-600 hover:underline text-center p-2">Cadastre-se</a>
+              </p>
           </div>
         </>
     )
 }
-
+ 
 export default LoginForm
+ 
+ 
