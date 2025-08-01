@@ -8,7 +8,7 @@ const RegisterForm = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-          const response = await axios.post("http://localhost:5000/api/users",{
+          const response = await axios.post("https://backend-poratlturismo-cm8i.onrender.com/api/users",{
             name: nome,
             email,
             password: senha
